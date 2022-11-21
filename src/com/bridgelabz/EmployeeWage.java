@@ -12,24 +12,43 @@ public class EmployeeWage {
 
     public static void employee() {
         int empWage = 0;
+        int hour = 0;
+        int totalEmpWage = 0;
+        int totalHours = 0;
+        int monthWorkingDays=20;
+        int days = 1;
+        while (days<=monthWorkingDays){
 
         int randomNumber = (int) Math.floor(Math.random() * 10) % 3;
         switch (randomNumber) {
             case (FULL_DAY):
-                System.out.println("Employee is full day Present");
+
                 empWage = FULL_DAY_HOUR * WAGE_PER_HOUR;
+                hour=FULL_DAY_HOUR;
+                System.out.println("Day - "+days+" : Employee wage is "+empWage+" and hour is "+hour);
                 break;
 
             case (HALF_DAY):
-                System.out.println("Employee is half day Present");
+
                 empWage = HALF_DAY_HOUR * WAGE_PER_HOUR;
+                hour=HALF_DAY_HOUR;
+                System.out.println("Day - "+days+" : Employee wage is "+empWage+" and hours is "+hour);
                 break;
             default:
-                System.out.println("Employee is Absent");
+                hour=0;
+                empWage=0;
+                System.out.println("Day - "+days+" : Employee is Absent");
 
 
         }
-        System.out.println("Employee wage is : " + empWage);
+
+        totalEmpWage=totalEmpWage+empWage;
+        totalHours=totalHours+hour;
+        days++;
+
+        }
+        System.out.println("Total Employee wage : "+totalEmpWage);
+        System.out.println("Total Employee working hours : "+totalHours);
     }
 
     public static void main(String[] args) {
