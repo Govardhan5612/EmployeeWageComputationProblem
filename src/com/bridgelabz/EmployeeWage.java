@@ -17,7 +17,7 @@ public class EmployeeWage {
         int totalHours = 0;
         int monthWorkingDays=20;
         int days = 1;
-        while (days<=monthWorkingDays){
+        while (days<=monthWorkingDays && totalHours<100){
 
         int randomNumber = (int) Math.floor(Math.random() * 10) % 3;
         switch (randomNumber) {
